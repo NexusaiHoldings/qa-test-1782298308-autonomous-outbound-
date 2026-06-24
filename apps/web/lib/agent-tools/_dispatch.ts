@@ -25,6 +25,7 @@
 
 import type { HandlerContext, HandlerResult } from "@nexus/identity-and-access";
 import { handleEnrichProspectWithTriggerEvents } from "./enrich_prospect_with_trigger_events";
+import { handleClassifyReplyIntent } from "./classify_reply_intent";
 
 type Args = Record<string, unknown>;
 
@@ -35,4 +36,5 @@ export const DOMAIN_DISPATCH: Record<
   // Build agent appends entries here per CTO-declared new_domain_tool.
   enrich_prospect_with_trigger_events: (ctx, a) =>
     handleEnrichProspectWithTriggerEvents(ctx, a),
+  classify_reply_intent: (ctx, a) => handleClassifyReplyIntent(ctx, a),
 };
